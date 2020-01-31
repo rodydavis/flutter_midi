@@ -7,7 +7,7 @@ A FLutter Plugin to Play midi on iOS and Android. This uses SoundFont (.sf2) Fil
 
 ## Instalation
 
-Download a sound font file, example: `sound_font.SF2` file [here.](https://drive.google.com/file/d/1Oaw_AYVp7BNb7_U9NqgAj9c8r4ALpXw3/view?usp=sharing)
+Download a any sound font file, example: `sound_font.SF2` file.
 
 Create an /assets folder and store the .sf2 files
 

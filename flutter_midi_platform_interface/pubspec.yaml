@@ -1,0 +1,19 @@
+name: flutter_midi_platform_interface
+description: A new Flutter package project.
+version: 0.0.1
+author: Rody Davis <rody.davis.jr@gmail.com>
+homepage: https://github.com/rodydavis/flutter_midi
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^1.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:

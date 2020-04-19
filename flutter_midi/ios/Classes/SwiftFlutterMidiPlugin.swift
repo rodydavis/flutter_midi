@@ -33,7 +33,7 @@ public class SwiftFlutterMidiPlugin: NSObject, FlutterPlugin {
         result(message)
       case "unmute":
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
         } catch {
             print(error)
         }

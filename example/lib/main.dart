@@ -5,7 +5,7 @@ import 'package:flutter_midi/flutter_midi.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart';
 
-import 'web_midi.dart';
+// import 'web_midi.dart';
 
 // The existing imports
 // !! Keep your existing impots here !!
@@ -107,7 +107,7 @@ class _MyAppState extends State<MyApp> {
 
   void _play(int midi) {
     if (kIsWeb) {
-      WebMidi.play(midi);
+      // WebMidi.play(midi);
     } else {
       _flutterMidi.playMidiNote(midi: midi);
     }

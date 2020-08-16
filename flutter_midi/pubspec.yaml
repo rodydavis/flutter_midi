@@ -1,6 +1,6 @@
 name: flutter_midi
 description: A FLutter Plugin to Play midi on iOS and Android.
-version: 1.0.1
+version: 1.0.2
 author: Rody Davis <rody.davis.jr@gmail.com>
 homepage: https://github.com/rodydavis/flutter_midi
 

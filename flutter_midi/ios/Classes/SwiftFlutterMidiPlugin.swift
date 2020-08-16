@@ -16,7 +16,7 @@ public class SwiftFlutterMidiPlugin: NSObject, FlutterPlugin {
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     switch call.method {
       case "prepare_midi":
-       var map = call.arguments as? Dictionary<String, String>
+        let map = call.arguments as? Dictionary<String, String>
        let data = map?["path"]
       let url = URL(fileURLWithPath: data!)
          au = AudioUnitMIDISynth(soundfont: url)
@@ -24,7 +24,7 @@ public class SwiftFlutterMidiPlugin: NSObject, FlutterPlugin {
         let message = "Prepared Sound Font"
         result(message)
     case "change_sound":
-        var map = call.arguments as? Dictionary<String, String>
+        let map = call.arguments as? Dictionary<String, String>
         let data = map?["path"]
         let url = URL(fileURLWithPath: data!)
         au.prepare(soundfont: url)

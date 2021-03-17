@@ -36,7 +36,7 @@
       <change beforePath="$PROJECT_DIR$/../cupertino_controllers/android/local.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../cupertino_controllers/android/settings.gradle" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../cupertino_controllers/android/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cupertino_controllers/android/src/main/kotlin/com/appleeducate/cupertinocontrollers/CupertinoControllersPlugin.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cupertino_controllers/android/src/main/kotlin/com/rodydavis/cupertinocontrollers/CupertinoControllersPlugin.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../cupertino_controllers/example/ios/Flutter/Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../cupertino_controllers/example/ios/Flutter/Generated.xcconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cupertino_controllers/ios/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../cupertino_controllers/ios/Assets/.gitkeep" beforeDir="false" />
@@ -161,7 +161,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/src/main/java/com/appleeducate/fluttermidi/FlutterMidiPlugin.java">
+        <entry file="file://$PROJECT_DIR$/android/src/main/java/com/rodydavis/fluttermidi/FlutterMidiPlugin.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
               <caret line="53" column="49" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
@@ -227,7 +227,7 @@
         <option value="$PROJECT_DIR$/ios/Classes/SwiftFlutterMidiPlugin.swift" />
         <option value="$PROJECT_DIR$/example/pubspec.yaml" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/android/src/main/java/com/appleeducate/fluttermidi/FlutterMidiPlugin.java" />
+        <option value="$PROJECT_DIR$/android/src/main/java/com/rodydavis/fluttermidi/FlutterMidiPlugin.java" />
         <option value="$PROJECT_DIR$/lib/local_storage.dart" />
         <option value="$PROJECT_DIR$/lib/flutter_midi.dart" />
         <option value="$PROJECT_DIR$/example/lib/main.dart" />
@@ -332,7 +332,7 @@
               <item name="android" type="cbb8eebc:String" user="android" />
               <item name="src/main" type="cbb8eebc:String" user="src/main" />
               <item name="java" type="cbb8eebc:String" user="java" />
-              <item name="com/appleeducate/fluttermidi" type="cbb8eebc:String" user="com/appleeducate/fluttermidi" />
+              <item name="com/rodydavis/fluttermidi" type="cbb8eebc:String" user="com/rodydavis/fluttermidi" />
             </path>
           </expand>
           <select />
@@ -541,7 +541,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/appleeducate/fluttermidi/FlutterMidiPlugin.java">
+    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/rodydavis/fluttermidi/FlutterMidiPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="53" column="49" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />

@@ -38,10 +38,13 @@ public class FlutterMidiPlugin implements MethodCallHandler {
         synth.getChannels()[0].programChange(0);
         synth.getChannels()[1].programChange(1);
         recv = synth.getReceiver();
+        result.success("Prepared Sound Font");
       } catch (IOException e) {
         e.printStackTrace();
+        result.error("IOException", e.toString(), null);
       } catch (MidiUnavailableException e) {
         e.printStackTrace();
+        result.error("MidiUnavailableException", e.toString(), null);
       }
     } else if (call.method.equals("change_sound")) {
       try {
@@ -54,19 +57,26 @@ public class FlutterMidiPlugin implements MethodCallHandler {
         synth.getChannels()[0].programChange(0);
         synth.getChannels()[1].programChange(1);
         recv = synth.getReceiver();
+        result.success("Change sound");
       } catch (IOException e) {
         e.printStackTrace();
+        result.error("IOException", e.toString(), null);
       } catch (MidiUnavailableException e) {
         e.printStackTrace();
+        result.error("MidiUnavailableException", e.toString(), null);
       }
+    } else if (call.method.equals("unmute")) {
+      result.success(null);
     } else if (call.method.equals("play_midi_note")) {
       int _note = call.argument("note");
       try {
         ShortMessage msg = new ShortMessage();
         msg.setMessage(ShortMessage.NOTE_ON, 0, _note, 127);
         recv.send(msg, -1);
+        result.success("Playing");
       } catch (InvalidMidiDataException e) {
         e.printStackTrace();
+        result.error("InvalidMidiDataException", e.toString(), null);
       }
     } else if (call.method.equals("stop_midi_note")) {
       int _note = call.argument("note");
@@ -74,10 +84,13 @@ public class FlutterMidiPlugin implements MethodCallHandler {
         ShortMessage msg = new ShortMessage();
         msg.setMessage(ShortMessage.NOTE_OFF, 0, _note, 127);
         recv.send(msg, -1);
+        result.success("Stopped");
       } catch (InvalidMidiDataException e) {
         e.printStackTrace();
+        result.error("InvalidMidiDataException", e.toString(), null);
       }
     } else {
+      result.notImplemented();
     }
   }
 }

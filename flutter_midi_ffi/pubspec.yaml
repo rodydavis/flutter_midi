@@ -33,3 +33,11 @@ flutter:
         pluginClass: FlutterMidiFfiPlugin
       windows:
         pluginClass: FlutterMidiFfiPlugin
+        
+ffigen:
+  output: lib/bindings.dart
+  headers:
+    entry-points:
+      - rust/target/bindings.h
+  name: GreeterBindings
+  description: Dart bindings to call mylib functions

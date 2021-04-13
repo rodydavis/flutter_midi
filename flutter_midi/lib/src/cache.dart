@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 
-Future<File> writeToFile(ByteData data,
+Future<File?> writeToFile(ByteData data,
     {String name = "instrument.sf2"}) async {
   if (kIsWeb) return null;
   final buffer = data.buffer;

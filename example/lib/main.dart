@@ -93,7 +93,7 @@ class _MyAppState extends State<MyApp> {
             //     load(_value);
             //   },
             // ),
-            RaisedButton(
+            ElevatedButton(
               child: Text("Play C"),
               onPressed: () {
                 _play(60);

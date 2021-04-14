@@ -1,6 +1,10 @@
+## 1.1.0
+
+* Null Safety
+
 ## 1.0.2
 
-- Updating Version
+*  Updating Version
 
 ## 1.0.1
 

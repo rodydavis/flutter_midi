@@ -13,7 +13,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_midi:
-    path: ../flutter_midi
+    path: ..
 
 flutter:
   uses-material-design: true

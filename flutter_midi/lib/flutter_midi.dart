@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_midi_platform_interface/platform_interface.dart';
@@ -15,10 +14,15 @@ class FlutterMidi extends FlutterMidiPlatform {
   /// On iOS make sure to include the sound_font.SF2 in the Runner folder.
   /// This does not work in the simulator.
   @override
-  Future<String> prepare(
-      {@required ByteData sf2, String name = "instrument.sf2"}) async {
+  Future<String?> prepare({
+    required ByteData sf2,
+    String name = "instrument.sf2",
+  }) async {
     if (kIsWeb) return _channel.invokeMethod('prepare_midi');
-    File _file = await writeToFile(sf2, name: name);
+    File? _file = await writeToFile(sf2, name: name);
+
+    if (_file == null) return null;
+
     final String result =
         await _channel.invokeMethod('prepare_midi', {"path": _file.path});
     print("Result: $result");
@@ -29,9 +33,12 @@ class FlutterMidi extends FlutterMidiPlatform {
   /// On iOS make sure to include the sound_font.SF2 in the Runner folder.
   /// This does not work in the simulator.
   @override
-  Future<String> changeSound(
-      {@required ByteData sf2, String name = "instrument.sf2"}) async {
-    File _file = await writeToFile(sf2, name: name);
+  Future<String?> changeSound({
+    required ByteData sf2,
+    String name = "instrument.sf2",
+  }) async {
+    File? _file = await writeToFile(sf2, name: name);
+    if (_file == null) return null;
 
     final Map<dynamic, dynamic> mapData = <dynamic, dynamic>{};
     mapData["path"] = _file.path;
@@ -52,7 +59,7 @@ class FlutterMidi extends FlutterMidiPlatform {
   /// Not needed if playing midi onTap.
   @override
   Future<String> stopMidiNote({
-    @required int midi,
+    required int midi,
   }) async {
     final String result =
         await _channel.invokeMethod('stop_midi_note', {"note": midi});
@@ -64,7 +71,7 @@ class FlutterMidi extends FlutterMidiPlatform {
   /// Multiple notes can be played at once as seperate calls.
   @override
   Future<String> playMidiNote({
-    @required int midi,
+    required int midi,
   }) async {
     return await _channel.invokeMethod('play_midi_note', {"note": midi});
   }

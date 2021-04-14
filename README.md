@@ -1,5 +1,8 @@
 [![Buy Me A Coffee](https://img.shields.io/badge/Donate-Buy%20Me%20A%20Coffee-yellow.svg)](https://www.buymeacoffee.com/rodydavis)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WSH3GVC49GNNJ)
+![github pages](https://github.com/rodydavis/flutter_midi/workflows/github%20pages/badge.svg)
+[![GitHub stars](https://img.shields.io/github/stars/rodydavis/flutter_midi?color=blue)](https://github.com/rodydavis/flutter_midi)
+[![flutter_midi](https://img.shields.io/pub/v/flutter_midi.svg)](https://pub.dev/packages/flutter_midi)
 
 # flutter_midi
 
@@ -7,7 +10,7 @@ A FLutter Plugin to Play midi on iOS and Android. This uses SoundFont (.sf2) Fil
 
 Online Demo: https://rodydavis.github.io/flutter_midi/
 
-## Instalation
+## Installation
 
 Download a any sound font file, example: `sound_font.SF2` file.
 

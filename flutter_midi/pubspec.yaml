@@ -9,12 +9,11 @@ dependencies:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
+  js: ^0.6.3
   path_provider: ^2.0.1
   path_provider_macos: ^2.0.0
-  tonic: ^0.2.3
   plugin_platform_interface: ^2.0.0
-  flutter_midi_platform_interface: # any
-    path: ../flutter_midi_platform_interface
+  tonic: ^0.2.3
 
 flutter:
   plugin:
@@ -25,15 +24,15 @@ flutter:
         package: com.appleeducate.fluttermidi
         pluginClass: FlutterMidiPlugin
       # web:
-      #   default_package: flutter_midi_web
+      #   pluginClass: FlutterMidiPlugin
+      #   fileName: flutter_midi_web.dart
       # macos:
       #   pluginClass: FlutterMidiPlugin
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  test: ^1.3.0
   mockito: ^4.1.1
+  test: ^1.3.0
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

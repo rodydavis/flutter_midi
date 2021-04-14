@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
@@ -17,18 +18,20 @@ class FlutterMidiPlatform extends PlatformInterface {
   /// On iOS make sure to include the sound_font.SF2 in the Runner folder.
   /// This does not work in the simulator.
   Future<String?> prepare({
-    required ByteData sf2,
-    String name = "instrument.sf2",
+    required ByteData? sf2,
+    String name = 'instrument.sf2',
   }) async {
-    print('Setup Midi..');
+    debugPrint('Setup Midi..');
     throw UnimplementedError('prepare() has not been implemented.');
   }
 
   /// Needed so that the sound font is loaded
   /// On iOS make sure to include the sound_font.SF2 in the Runner folder.
   /// This does not work in the simulator.
-  Future<String?> changeSound(
-      {required ByteData sf2, String name = "instrument.sf2"}) async {
+  Future<String?> changeSound({
+    required ByteData? sf2,
+    String name = 'instrument.sf2',
+  }) async {
     throw UnimplementedError('changeSound() has not been implemented.');
   }
 

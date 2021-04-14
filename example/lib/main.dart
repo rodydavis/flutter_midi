@@ -1,36 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_midi/flutter_midi.dart';
-
-import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart';
 
-// import 'web_midi.dart';
-
-// The existing imports
-// !! Keep your existing impots here !!
-
-/// main is entry point of Flutter application
-void main() {
-  // Desktop platforms aren't a valid platform.
-  if (!kIsWeb) _setTargetPlatformForDesktop();
-  return runApp(MyApp());
-}
-
-/// If the current platform is desktop, override the default platform to
-/// a supported platform (iOS for macOS, Android for Linux and Windows).
-/// Otherwise, do nothing.
-void _setTargetPlatformForDesktop() {
-  TargetPlatform targetPlatform;
-  if (Platform.isMacOS) {
-    targetPlatform = TargetPlatform.iOS;
-  } else if (Platform.isLinux || Platform.isWindows) {
-    targetPlatform = TargetPlatform.android;
-  }
-  if (targetPlatform != null) {
-    debugDefaultTargetPlatformOverride = targetPlatform;
-  }
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
@@ -50,15 +23,15 @@ class _MyAppState extends State<MyApp> {
   }
 
   void load(String asset) async {
-    print("Loading File...");
+    print('Loading File...');
     _flutterMidi.unmute();
     ByteData _byte = await rootBundle.load(asset);
     //assets/sf2/SmallTimGM6mb.sf2
     //assets/sf2/Piano.SF2
-    _flutterMidi.prepare(sf2: _byte, name: _value.replaceAll("assets/", ""));
+    _flutterMidi.prepare(sf2: _byte, name: _value.replaceAll('assets/', ''));
   }
 
-  String _value = "assets/Piano.sf2";
+  String _value = 'assets/Piano.sf2';
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +67,7 @@ class _MyAppState extends State<MyApp> {
             //   },
             // ),
             ElevatedButton(
-              child: Text("Play C"),
+              child: Text('Play C'),
               onPressed: () {
                 _play(60);
               },

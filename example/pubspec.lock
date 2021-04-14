@@ -76,13 +76,6 @@ packages:
       relative: true
     source: path
     version: "1.0.2"
-  flutter_midi_platform_interface:
-    dependency: transitive
-    description:
-      path: "../flutter_midi_platform_interface"
-      relative: true
-    source: path
-    version: "0.0.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter

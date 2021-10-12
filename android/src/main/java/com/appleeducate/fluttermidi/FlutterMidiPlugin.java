@@ -27,6 +27,16 @@ public class FlutterMidiPlugin implements MethodCallHandler,FlutterPlugin {
   }
 
   @Override
+  public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
+    // TODO: your plugin is now attached to a Flutter experience.
+  }
+
+  @Override
+  public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
+    // TODO: your plugin is no longer attached to a Flutter experience.
+  }
+
+  @Override
   public void onMethodCall(MethodCall call, Result result) {
     if (call.method.equals("prepare_midi")) {
       try {

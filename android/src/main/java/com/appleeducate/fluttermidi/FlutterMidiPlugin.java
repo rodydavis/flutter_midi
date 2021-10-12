@@ -2,6 +2,7 @@ package com.appleeducate.fluttermidi;
 
 import cn.sherlock.com.sun.media.sound.SF2Soundbank;
 import cn.sherlock.com.sun.media.sound.SoftSynthesizer;
+import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
@@ -15,7 +16,7 @@ import jp.kshoji.javax.sound.midi.Receiver;
 import jp.kshoji.javax.sound.midi.ShortMessage;
 
 /** FlutterMidiPlugin */
-public class FlutterMidiPlugin implements MethodCallHandler {
+public class FlutterMidiPlugin implements MethodCallHandler,FlutterPlugin {
   private SoftSynthesizer synth;
   private Receiver recv;
 

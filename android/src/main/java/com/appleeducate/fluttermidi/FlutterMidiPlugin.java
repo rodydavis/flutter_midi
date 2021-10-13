@@ -8,6 +8,7 @@ import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
+import io.flutter.plugin.common.BinaryMessenger;
 import java.io.File;
 import java.io.IOException;
 import jp.kshoji.javax.sound.midi.InvalidMidiDataException;
@@ -19,21 +20,33 @@ import jp.kshoji.javax.sound.midi.ShortMessage;
 public class FlutterMidiPlugin implements MethodCallHandler,FlutterPlugin {
   private SoftSynthesizer synth;
   private Receiver recv;
+  private MethodChannel methodChannel;
+  private Context applicationContext;
 
   /** Plugin registration. */
+  @SuppressWarnings("deprecation")
   public static void registerWith(Registrar registrar) {
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "flutter_midi");
-    channel.setMethodCallHandler(new FlutterMidiPlugin());
+    final FlutterMidiPlugin instance = new FlutterMidiPlugin();
+    instance.onAttachedToEngine(registrar.context(), registrar.messenger());
+
   }
 
   @Override
-  public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
-    // TODO: your plugin is now attached to a Flutter experience.
+  public void onAttachedToEngine(FlutterPluginBinding binding) {
+    onAttachedToEngine(binding.getApplicationContext(), binding.getBinaryMessenger());
   }
 
   @Override
-  public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
-    // TODO: your plugin is no longer attached to a Flutter experience.
+  public void onAttachedToEngine(Context applicationContext, BinaryMessenger messenger) {
+    methodChannel = new MethodChannel(messenger, "flutter_midi");
+    methodChannel.setMethodCallHandler(new FlutterMidiPlugin());
+  }
+
+  @Override
+  public void onDetachedFromEngine(FlutterPluginBinding binding) {
+    applicationContext = null;
+    methodChannel.setMethodCallHandler(null);
+    methodChannel = null;
   }
 
   @Override

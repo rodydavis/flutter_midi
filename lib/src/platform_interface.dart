@@ -35,15 +35,17 @@ class FlutterMidiPlatform extends PlatformInterface {
     throw UnimplementedError('changeSound() has not been implemented.');
   }
 
-  /// Unmute the device temporarly even if the mute switch is on or toggled in settings.
+  /// Unmute the device temporarily even if the mute switch is on or toggled in settings.
   Future<String?> unmute() async {
     throw UnimplementedError('canLaunch() has not been implemented.');
   }
 
   /// Use this when stopping the sound onTouchUp or to cancel a long file.
   /// Not needed if playing midi onTap.
+  /// Stop with velocity in the range between 0-127
   Future<String?> stopMidiNote({
     required int midi,
+    int velocity = 64,
   }) async {
     throw UnimplementedError('stopMidiNote() has not been implemented.');
   }

@@ -54,12 +54,15 @@ class FlutterMidi extends FlutterMidiPlatform {
 
   /// Use this when stopping the sound onTouchUp or to cancel a long file.
   /// Not needed if playing midi onTap.
+  /// Stop with velocity in the range between 0-127
   @override
   Future<String?> stopMidiNote({
     required int midi,
+    int velocity = 64,
   }) async {
     return _channel.invokeMethod('stop_midi_note', {
       'note': midi,
+      'velocity': velocity,
     });
   }
 

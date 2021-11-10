@@ -49,10 +49,12 @@ class FlutterMidiPlatform extends PlatformInterface {
   }
 
   /// Play a midi note from the sound_font.SF2 library bundled with the application.
-  /// Play a midi note in the range between 0-256
-  /// Multiple notes can be played at once as seperate calls.
+  /// Play a midi note in the range between 0-127
+  /// Play with velocity in the range between 0-127
+  /// Multiple notes can be played at once as separate calls.
   Future<String?> playMidiNote({
     required int midi,
+    int velocity = 64,
   }) async {
     throw UnimplementedError('playMidiNote() has not been implemented.');
   }

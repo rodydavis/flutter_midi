@@ -69,7 +69,7 @@ class _MyAppState extends State<MyApp> {
             ElevatedButton(
               child: Text('Play C'),
               onPressed: () {
-                _play(60);
+                _play(127);
               },
             ),
           ],

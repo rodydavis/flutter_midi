@@ -43,13 +43,13 @@ public class SwiftFlutterMidiPlugin: NSObject, FlutterPlugin {
         _arguments = call.arguments as! [String : Any];
         let midi = _arguments["note"] as? Int
         let velocity = _arguments["velocity"] as? Int
-        au.playPitch(midi:  midi ?? 60, velocity ?? 64)
+        au.playPitch(midi: midi ?? 60, velocity: velocity ?? 64)
         let message = "Playing: \(String(describing: midi!))"
         result(message)
       case "stop_midi_note":
       _arguments = call.arguments as! [String : Any];
        let midi = _arguments["note"] as? Int
-      au.stopPitch(midi:  midi ?? 60)
+      au.stopPitch(midi: midi ?? 60)
         let message = "Stopped: \(String(describing: midi!))"
         result(message)
       default:

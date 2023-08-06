@@ -41,20 +41,30 @@ class MethodChannelUrlLauncher extends FlutterMidiPlatform {
 
   /// Use this when stopping the sound onTouchUp or to cancel a long file.
   /// Not needed if playing midi onTap.
+  /// Stop with velocity in the range between 0-127
   @override
   Future<String?> stopMidiNote({
     required int midi,
+    int velocity = 64,
   }) {
-    return _channel.invokeMethod<String>('stop_midi_note', {'note': midi});
+    return _channel.invokeMethod<String>('stop_midi_note', {
+      'note': midi,
+      'velocity': velocity,
+    });
   }
 
   /// Play a midi note from the sound_font.SF2 library bundled with the application.
-  /// Play a midi note in the range between 0-256
+  /// Play a midi note in the range between 0-127
+  /// Play with velocity in the range between 0-127
   /// Multiple notes can be played at once as separate calls.
   @override
   Future<String?> playMidiNote({
     required int midi,
+    int velocity = 64,
   }) {
-    return _channel.invokeMethod<String>('play_midi_note', {'note': midi});
+    return _channel.invokeMethod<String>('play_midi_note', {
+      'note': midi,
+      'velocity': velocity,
+    });
   }
 }

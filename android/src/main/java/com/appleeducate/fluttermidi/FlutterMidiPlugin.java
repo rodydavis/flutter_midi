@@ -94,18 +94,20 @@ public class FlutterMidiPlugin implements MethodCallHandler, FlutterPlugin {
       }
     } else if (call.method.equals("play_midi_note")) {
       int _note = call.argument("note");
+      int _velocity = call.argument("velocity");
       try {
         ShortMessage msg = new ShortMessage();
-        msg.setMessage(ShortMessage.NOTE_ON, 0, _note, 127);
+        msg.setMessage(ShortMessage.NOTE_ON, 0, _note, _velocity);
         recv.send(msg, -1);
       } catch (InvalidMidiDataException e) {
         e.printStackTrace();
       }
     } else if (call.method.equals("stop_midi_note")) {
       int _note = call.argument("note");
+      int _velocity = call.argument("velocity");
       try {
         ShortMessage msg = new ShortMessage();
-        msg.setMessage(ShortMessage.NOTE_OFF, 0, _note, 127);
+        msg.setMessage(ShortMessage.NOTE_OFF, 0, _note, _velocity);
         recv.send(msg, -1);
       } catch (InvalidMidiDataException e) {
         e.printStackTrace();

@@ -44,6 +44,8 @@ Play and Stop the Midi Notes
 
 ```dart
  FlutterMidi.playMidiNote(midi: 60);
+ FlutterMidi.playMidiNote(midi: 60, velocity: 120);
 
  FlutterMidi.stopMidiNote(midi: 60);
+ FlutterMidi.stopMidiNote(midi: 60, velocity: 120);
 ```

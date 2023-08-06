@@ -45,7 +45,7 @@ class FlutterMidi extends FlutterMidiPlatform {
     return result;
   }
 
-  /// Unmute the device temporarly even if the mute switch is on or toggled in settings.
+  /// Unmute the device temporarily even if the mute switch is on or toggled in settings.
   @override
   Future<String> unmute() async {
     final String result = await _channel.invokeMethod('unmute');
@@ -54,16 +54,30 @@ class FlutterMidi extends FlutterMidiPlatform {
 
   /// Use this when stopping the sound onTouchUp or to cancel a long file.
   /// Not needed if playing midi onTap.
+  /// Stop with velocity in the range between 0-127
   @override
-  Future<String?> stopMidiNote({required int midi}) async {
-    return _channel.invokeMethod('stop_midi_note', {'note': midi});
+  Future<String?> stopMidiNote({
+    required int midi,
+    int velocity = 64,
+  }) async {
+    return _channel.invokeMethod('stop_midi_note', {
+      'note': midi,
+      'velocity': velocity,
+    });
   }
 
   /// Play a midi note from the sound_font.SF2 library bundled with the application.
-  /// Play a midi note in the range between 0-256
+  /// Play a midi note in the range between 0-127
+  /// Play with velocity in the range between 0-127
   /// Multiple notes can be played at once as separate calls.
   @override
-  Future<String?> playMidiNote({required int midi}) async {
-    return _channel.invokeMethod('play_midi_note', {'note': midi});
+  Future<String?> playMidiNote({
+    required int midi,
+    int velocity = 64,
+  }) async {
+    return _channel.invokeMethod('play_midi_note', {
+      'note': midi,
+      'velocity': velocity,
+    });
   }
 }

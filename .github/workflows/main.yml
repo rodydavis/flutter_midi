@@ -1,30 +1,25 @@
 name: github pages
 
-on:
-  push:
-    branches:
-      - master
+on: push
 
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       - name: Setup Flutter
-        uses: subosito/flutter-action@v1
+        uses: subosito/flutter-action@v2
         with:
-          channel: 'dev'
-
+          channel: 'stable' # or: 'beta', 'dev', 'master' (or 'main')
+      - name: 'Flutter Version'
+        run: flutter --version
       - name: Install
         run: |
           flutter config --enable-web
           flutter pub get
+      - name: Analyze
+        run: flutter analyze
+      - name: Test
+        run: flutter test
       - name: Build
         run: cd example && flutter build web
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./example/build/web
